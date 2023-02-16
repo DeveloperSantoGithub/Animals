@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import ShowAnimals from './components/ShowAnimals';
 
 function App() {
+	const [count, setCount] = useState(0);
+
 	const handleClick = () => {
 		console.log('New animals added');
 	};
@@ -11,6 +14,7 @@ function App() {
 			<ShowAnimals />
 
 			<button onClick={handleClick}>Add Animals</button>
+			<h2>Number of Animals: {count}</h2>
 		</>
 	);
 }
