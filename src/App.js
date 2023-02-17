@@ -1,8 +1,15 @@
-import { useState } from 'react';
 import ShowAnimals from './components/ShowAnimals';
 
+function useState(defaultValue) {
+	return {
+		yourValue: defaultValue,
+		yourSetter: () => {},
+	};
+}
+
 function App() {
-	const [count, setCount] = useState(0);
+	// const [count, setCount] = useState(0);
+	const { yourValue: count, yourSetter: setCount } = useState(0);
 
 	const handleClick = () => {
 		setCount(count + 1);
