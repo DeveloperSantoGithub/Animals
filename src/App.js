@@ -1,11 +1,18 @@
 import { useState } from 'react';
 import ShowAnimals from './components/ShowAnimals';
 
+//=> Rendom Animals Genaretor:
+function getRendomAnimals() {
+	const animals = ['bird', 'cow', 'cat', 'dog', 'horse', 'gator'];
+
+	return animals[Math.floor(Math.random() * animals.length)];
+}
+
 function App() {
-	const [count, setCount] = useState(0);
+	const [animals, setAnimals] = useState([]);
 
 	const handleClick = () => {
-		setCount(count + 1);
+		setAnimals([...animals, getRendomAnimals()]);
 	};
 
 	return (
@@ -14,7 +21,7 @@ function App() {
 			<ShowAnimals />
 
 			<button onClick={handleClick}>Add Animals</button>
-			<h2>Number of Animals: {count}</h2>
+			<div>{animals}</div>
 		</>
 	);
 }
