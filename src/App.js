@@ -3,11 +3,12 @@ import ShowAnimals from './components/ShowAnimals';
 
 //=> Rendom Animals Genaretor:
 function getRendomAnimals() {
-	const animals = ['bird', 'cow', 'cat', 'dog', 'horse', 'gator'];
+	const animals = ['bird', 'cat', 'goat', 'cow', 'gator', 'horse'];
 
 	return animals[Math.floor(Math.random() * animals.length)];
 }
 
+//=> APP :
 function App() {
 	const [animals, setAnimals] = useState([]);
 
@@ -15,13 +16,17 @@ function App() {
 		setAnimals([...animals, getRendomAnimals()]);
 	};
 
+	//=> Rendered Animals:
+	const renderedAnimals = animals.map((animal, index) => {
+		return <ShowAnimals type={animal} key={index} />;
+	});
+
 	return (
 		<>
 			<h1>Animals Show</h1>
-			<ShowAnimals />
 
 			<button onClick={handleClick}>Add Animals</button>
-			<div>{animals}</div>
+			<div>{renderedAnimals}</div>
 		</>
 	);
 }
