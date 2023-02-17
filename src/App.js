@@ -3,7 +3,7 @@ import ShowAnimals from './components/ShowAnimals';
 
 //=> Rendom Animals Genaretor:
 function getRendomAnimals() {
-	const animals = ['lion', 'bird', 'cat', 'goat', 'cow', 'gator', 'horse'];
+	const animals = ['lion', 'bird', 'cat', 'goat', 'cow', 'alligator', 'horse'];
 
 	return animals[Math.floor(Math.random() * animals.length)];
 }
