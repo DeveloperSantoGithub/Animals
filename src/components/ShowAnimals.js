@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import alligator from '../Assets/animals/alligator.svg';
 import bird from '../Assets/animals/bird.svg';
 import cat from '../Assets/animals/cat.svg';
@@ -7,12 +9,28 @@ import goat from '../Assets/animals/goat.svg';
 import horse from '../Assets/animals/horse.svg';
 import lion from '../Assets/animals/lion.svg';
 
-const animalsSvgMap = { lion, bird, cat, dog, goat, horse, alligator, cow };
+import heart from '../Assets/emoji/heart.svg';
+
+const animalSvgMap = { lion, bird, cat, dog, cow, goat, horse, alligator };
 
 function ShowAnimals({ type }) {
+	const [clicks, setClicks] = useState(0);
+
+	const handleClick = () => {
+		setClicks(clicks + 1);
+	};
+
 	return (
-		<div>
-			<img alt="Animals" src={animalsSvgMap[type]} />
+		<div className="animalCard" onClick={handleClick}>
+			<img className="animalImg" alt="animal" src={animalSvgMap[type]} />
+			<img
+				className="heartImg"
+				alt="heart"
+				src={heart}
+				style={{
+					width: 10 + 10 * clicks + 'px',
+				}}
+			/>
 		</div>
 	);
 }

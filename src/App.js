@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ShowAnimals from './components/ShowAnimals';
+import './Styles/Global.scss';
 
 //=> Rendom Animals Genaretor:
 function getRendomAnimals() {
@@ -15,6 +16,9 @@ function App() {
 	const handleClick = () => {
 		setAnimals([...animals, getRendomAnimals()]);
 	};
+	const handleClear = () => {
+		setAnimals([]);
+	};
 
 	//=> Rendered Animals:
 	const renderedAnimals = animals.map((animal, index) => {
@@ -22,12 +26,19 @@ function App() {
 	});
 
 	return (
-		<>
-			<h1>Animals Show</h1>
+		<div className="animalsApp">
+			<h1 className="logo">Rendom Animals Show!</h1>
+			<div className="Btns">
+				<button className="addBtn" onClick={handleClick}>
+					Add Animals
+				</button>
+				<button className="clearBtn" onClick={handleClear}>
+					Clear All
+				</button>
+			</div>
 
-			<button onClick={handleClick}>Add Animals</button>
-			<div>{renderedAnimals}</div>
-		</>
+			<div className="animalsList">{renderedAnimals}</div>
+		</div>
 	);
 }
 

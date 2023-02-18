@@ -1,0 +1,32 @@
+.animalCard {
+	position: relative;
+	padding: 10px;
+	margin: 10px;
+	background: rgba(180, 255, 180, 0.5);
+
+	border: 1px solid lightgray;
+	border-radius: 15px;
+	box-shadow: 0 3px 4px lightgray;
+
+	cursor: pointer;
+	user-select: none;
+
+	.animalImg {
+		width: 200px;
+		background: none;
+	}
+
+	.heartImg {
+		position: absolute;
+		background: none;
+
+		bottom: 5%;
+		right: 5%;
+	}
+
+	@media screen and (max-width: 500px) {
+		.animalImg {
+			width: 100px;
+		}
+	}
+}
