@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
-import alligator from '../Assets/animals/alligator.svg';
-import bird from '../Assets/animals/bird.svg';
-import cat from '../Assets/animals/cat.svg';
-import cow from '../Assets/animals/cow.svg';
-import dog from '../Assets/animals/dog.svg';
-import goat from '../Assets/animals/goat.svg';
-import horse from '../Assets/animals/horse.svg';
-import lion from '../Assets/animals/lion.svg';
+import alligator from '../assets/animals/alligator.svg';
+import bird from '../assets/animals/bird.svg';
+import cat from '../assets/animals/cat.svg';
+import cow from '../assets/animals/cow.svg';
+import dog from '../assets/animals/dog.svg';
+import goat from '../assets/animals/goat.svg';
+import horse from '../assets/animals/horse.svg';
+import lion from '../assets/animals/lion.svg';
 
-import heart from '../Assets/emoji/heart.svg';
+import heart from '../assets/emoji/heart.svg';
 
 const animalSvgMap = { lion, bird, cat, dog, cow, goat, horse, alligator };
 
